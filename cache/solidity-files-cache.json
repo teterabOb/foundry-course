@@ -48,7 +48,7 @@
       "versionRequirement": ">=0.5.0",
       "artifacts": {
         "DSTest": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "test.sol\\DSTest.json"
+          "0.8.10+commit.fc410830.Windows.msvc": "test.sol\\DSTest.json"
         }
       }
     },
@@ -92,12 +92,15 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "CommonBase": {
+          "0.8.10+commit.fc410830.Windows.msvc": "Base.sol\\CommonBase.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "Base.sol\\CommonBase.json"
         },
         "ScriptBase": {
+          "0.8.10+commit.fc410830.Windows.msvc": "Base.sol\\ScriptBase.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "Base.sol\\ScriptBase.json"
         },
         "TestBase": {
+          "0.8.10+commit.fc410830.Windows.msvc": "Base.sol\\TestBase.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "Base.sol\\TestBase.json"
         }
       }
@@ -197,7 +200,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdAssertions": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdAssertions.sol\\StdAssertions.json"
+          "0.8.10+commit.fc410830.Windows.msvc": "StdAssertions.sol\\StdAssertions.json"
         }
       }
     },
@@ -240,6 +243,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdChains": {
+          "0.8.10+commit.fc410830.Windows.msvc": "StdChains.sol\\StdChains.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "StdChains.sol\\StdChains.json"
         }
       }
@@ -284,9 +288,11 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdCheats": {
+          "0.8.10+commit.fc410830.Windows.msvc": "StdCheats.sol\\StdCheats.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "StdCheats.sol\\StdCheats.json"
         },
         "StdCheatsSafe": {
+          "0.8.10+commit.fc410830.Windows.msvc": "StdCheats.sol\\StdCheatsSafe.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "StdCheats.sol\\StdCheatsSafe.json"
         }
       }
@@ -328,7 +334,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "stdError": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdError.sol\\stdError.json"
+          "0.8.10+commit.fc410830.Windows.msvc": "StdError.sol\\stdError.json"
         }
       }
     },
@@ -369,7 +375,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdInvariant": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdInvariant.sol\\StdInvariant.json"
+          "0.8.10+commit.fc410830.Windows.msvc": "StdInvariant.sol\\StdInvariant.json"
         }
       }
     },
@@ -412,6 +418,7 @@
       "versionRequirement": ">=0.6.0, <0.9.0",
       "artifacts": {
         "stdJson": {
+          "0.8.10+commit.fc410830.Windows.msvc": "StdJson.sol\\stdJson.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "StdJson.sol\\stdJson.json"
         }
       }
@@ -453,6 +460,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "stdMath": {
+          "0.8.10+commit.fc410830.Windows.msvc": "StdMath.sol\\stdMath.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "StdMath.sol\\stdMath.json"
         }
       }
@@ -496,9 +504,11 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "stdStorage": {
+          "0.8.10+commit.fc410830.Windows.msvc": "StdStorage.sol\\stdStorage.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "StdStorage.sol\\stdStorage.json"
         },
         "stdStorageSafe": {
+          "0.8.10+commit.fc410830.Windows.msvc": "StdStorage.sol\\stdStorageSafe.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "StdStorage.sol\\stdStorageSafe.json"
         }
       }
@@ -542,6 +552,7 @@
       "versionRequirement": ">=0.4.22, <0.9.0",
       "artifacts": {
         "StdStyle": {
+          "0.8.10+commit.fc410830.Windows.msvc": "StdStyle.sol\\StdStyle.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "StdStyle.sol\\StdStyle.json"
         }
       }
@@ -586,6 +597,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdUtils": {
+          "0.8.10+commit.fc410830.Windows.msvc": "StdUtils.sol\\StdUtils.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "StdUtils.sol\\StdUtils.json"
         }
       }
@@ -645,7 +657,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "Test": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Test.sol\\Test.json"
+          "0.8.10+commit.fc410830.Windows.msvc": "Test.sol\\Test.json"
         }
       }
     },
@@ -686,9 +698,11 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "Vm": {
+          "0.8.10+commit.fc410830.Windows.msvc": "Vm.sol\\Vm.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "Vm.sol\\Vm.json"
         },
         "VmSafe": {
+          "0.8.10+commit.fc410830.Windows.msvc": "Vm.sol\\VmSafe.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "Vm.sol\\VmSafe.json"
         }
       }
@@ -730,6 +744,7 @@
       "versionRequirement": ">=0.4.22, <0.9.0",
       "artifacts": {
         "console": {
+          "0.8.10+commit.fc410830.Windows.msvc": "console.sol\\console.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "console.sol\\console.json"
         }
       }
@@ -771,6 +786,7 @@
       "versionRequirement": ">=0.4.22, <0.9.0",
       "artifacts": {
         "console2": {
+          "0.8.10+commit.fc410830.Windows.msvc": "console2.sol\\console2.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "console2.sol\\console2.json"
         }
       }
@@ -812,6 +828,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "IMulticall3": {
+          "0.8.10+commit.fc410830.Windows.msvc": "IMulticall3.sol\\IMulticall3.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "IMulticall3.sol\\IMulticall3.json"
         }
       }
@@ -853,13 +870,14 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "safeconsole": {
+          "0.8.10+commit.fc410830.Windows.msvc": "safeconsole.sol\\safeconsole.json",
           "0.8.21+commit.d9974bed.Windows.msvc": "safeconsole.sol\\safeconsole.json"
         }
       }
     },
     "script/Counter.s.sol": {
-      "lastModificationDate": 1693436470907,
-      "contentHash": "534b3cac662d582f82ac8982c4b53895",
+      "lastModificationDate": 1693956258793,
+      "contentHash": "7539680fbd3ad49c6632713cc2bb6bf6",
       "sourceName": "script/Counter.s.sol",
       "solcConfig": {
         "settings": {
@@ -914,8 +932,8 @@
       }
     },
     "src/Counter.sol": {
-      "lastModificationDate": 1693436470905,
-      "contentHash": "063d1192e5b4e76cc73182123b32067a",
+      "lastModificationDate": 1694645304735,
+      "contentHash": "6f581be3f65ab254f64b3de0e0f30d22",
       "sourceName": "src/Counter.sol",
       "solcConfig": {
         "settings": {
@@ -947,16 +965,57 @@
         }
       },
       "imports": [],
-      "versionRequirement": "^0.8.13",
+      "versionRequirement": "=0.8.10",
       "artifacts": {
         "Counter": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Counter.sol\\Counter.json"
+          "0.8.10+commit.fc410830.Windows.msvc": "Counter.sol\\Counter.json"
+        }
+      }
+    },
+    "src/HelperContract.sol": {
+      "lastModificationDate": 1694646888144,
+      "contentHash": "0673d536659ee0e2904b573b1afe337a",
+      "sourceName": "src/HelperContract.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "=0.8.10",
+      "artifacts": {
+        "HelperContract": {
+          "0.8.10+commit.fc410830.Windows.msvc": "HelperContract.sol\\HelperContract.json"
         }
       }
     },
     "src/HolaMundo.sol": {
-      "lastModificationDate": 1693437103016,
-      "contentHash": "cb4b7c942a21c8e772dc8ca09c3423b3",
+      "lastModificationDate": 1694645312648,
+      "contentHash": "6f3c94fe1cd61fde074ec864d9d42e9b",
       "sourceName": "src/HolaMundo.sol",
       "solcConfig": {
         "settings": {
@@ -988,16 +1047,16 @@
         }
       },
       "imports": [],
-      "versionRequirement": "^0.8.13",
+      "versionRequirement": "=0.8.10",
       "artifacts": {
         "HolaMundo": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "HolaMundo.sol\\HolaMundo.json"
+          "0.8.10+commit.fc410830.Windows.msvc": "HolaMundo.sol\\HolaMundo.json"
         }
       }
     },
     "test/Counter.t.sol": {
-      "lastModificationDate": 1693436470906,
-      "contentHash": "b535dc282ca16fecf75b09449a398f64",
+      "lastModificationDate": 1694645839514,
+      "contentHash": "384c1ae42b1a1addba6a8907e1051024",
       "sourceName": "test/Counter.t.sol",
       "solcConfig": {
         "settings": {
@@ -1049,16 +1108,77 @@
         "lib/forge-std/src/safeconsole.sol",
         "src\\Counter.sol"
       ],
-      "versionRequirement": "^0.8.13",
+      "versionRequirement": "=0.8.10",
       "artifacts": {
         "CounterTest": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Counter.t.sol\\CounterTest.json"
+          "0.8.10+commit.fc410830.Windows.msvc": "Counter.t.sol\\CounterTest.json"
+        }
+      }
+    },
+    "test/FoundryExample.t.sol": {
+      "lastModificationDate": 1694647024547,
+      "contentHash": "67bad9bdbcb85bf34e0b0f31095d3031",
+      "sourceName": "test/FoundryExample.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src\\test.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src\\Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/forge-std/src/safeconsole.sol",
+        "src\\HelperContract.sol"
+      ],
+      "versionRequirement": "=0.8.10",
+      "artifacts": {
+        "ContractBTest": {
+          "0.8.10+commit.fc410830.Windows.msvc": "FoundryExample.t.sol\\ContractBTest.json"
         }
       }
     },
     "test/HolaMundo.t.sol": {
-      "lastModificationDate": 1693437437745,
-      "contentHash": "b52520e9fa22a82a37e693b059967d83",
+      "lastModificationDate": 1694645505736,
+      "contentHash": "5f736fa2a894e398684c4238f1236cec",
       "sourceName": "test/HolaMundo.t.sol",
       "solcConfig": {
         "settings": {
@@ -1110,10 +1230,10 @@
         "lib/forge-std/src/safeconsole.sol",
         "src\\HolaMundo.sol"
       ],
-      "versionRequirement": "^0.8.13",
+      "versionRequirement": "=0.8.10",
       "artifacts": {
         "HolaMundoTest": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "HolaMundo.t.sol\\HolaMundoTest.json"
+          "0.8.10+commit.fc410830.Windows.msvc": "HolaMundo.t.sol\\HolaMundoTest.json"
         }
       }
     }

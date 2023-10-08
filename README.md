@@ -29,6 +29,17 @@ $ forge build
 $ forge test
 ```
 
+Run specific test
+
+```shell
+$ forge test --match-contract ComplicatedContractTest --match-test testDeposit
+```
+We can run tests in filenames that match a glob pattern with
+
+```shell
+$ forge test --match-path test/ContractB.t.sol
+```
+
 ### Format
 
 ```shell

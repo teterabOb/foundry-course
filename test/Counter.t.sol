@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity 0.8.10;
 
 import  "forge-std/Test.sol";
 import {HelperContract} from "../src/HelperContract.sol";
@@ -24,6 +24,12 @@ contract CounterTest is Test, HelperContract {
         assertEq(testNumber, 42);
     }
 
+    function testIncrementa() public{
+        counter.incrementa();
+        console.log("Imprimiendo el siguiente mensaje :", 256);
+        assertEq(counter.contador(), 1);
+    }
+
     function testFail_Substract43() public {
         testNumber -= 43;
     }
@@ -31,12 +37,6 @@ contract CounterTest is Test, HelperContract {
     function test_GetContador() public {
         uint256 contadorValue = counter.getContador();
         assertEq(contadorValue, 0);
-    }
-
-    function test_Incrementa() public {
-        counter.incrementa();
-        uint256 contadorValue = counter.getContador();
-        assertEq(contadorValue, 1);
     }
 
     function testFail_reduce() public {

@@ -8,7 +8,7 @@ contract Counter {
         return contador;
     }
 
-    function incrementa() public {
+    function incrementa() public {        
         contador += 1;
     }
 

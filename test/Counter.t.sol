@@ -7,17 +7,13 @@ import {Counter} from "../src/Counter.sol";
 contract CounterTest is Test {
     Counter public counter;
 
-    function setUp() public{
-        counter = new Counter();        
+    function setUp() public {
+        counter = new Counter();
     }
 
-    function test_Consolelog() public view {
-        console.log(address(this));
-    }
-
-    function testIncrementa() public{
+    function testIncrementa() public {
         counter.incrementa();
+        console.log("Imprimiendo el siguiente mensaje :", 256);
         assertEq(counter.contador(), 1);
     }
-
 }

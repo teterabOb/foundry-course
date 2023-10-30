@@ -932,8 +932,8 @@
       }
     },
     "src/Counter.sol": {
-      "lastModificationDate": 1694645304735,
-      "contentHash": "6f581be3f65ab254f64b3de0e0f30d22",
+      "lastModificationDate": 1696977119161,
+      "contentHash": "7a8cddeaaff7833406d713053c6bb2c5",
       "sourceName": "src/Counter.sol",
       "solcConfig": {
         "settings": {
@@ -973,8 +973,8 @@
       }
     },
     "src/HelperContract.sol": {
-      "lastModificationDate": 1694646888144,
-      "contentHash": "0673d536659ee0e2904b573b1afe337a",
+      "lastModificationDate": 1696888639431,
+      "contentHash": "8ed580331bdd9a1622fa2ffb04c05463",
       "sourceName": "src/HelperContract.sol",
       "solcConfig": {
         "settings": {
@@ -1055,8 +1055,8 @@
       }
     },
     "test/Counter.t.sol": {
-      "lastModificationDate": 1694645839514,
-      "contentHash": "384c1ae42b1a1addba6a8907e1051024",
+      "lastModificationDate": 1696977187592,
+      "contentHash": "a10570adf66bb3a7d8be7efc910d1cfd",
       "sourceName": "test/Counter.t.sol",
       "solcConfig": {
         "settings": {
@@ -1116,8 +1116,8 @@
       }
     },
     "test/FoundryExample.t.sol": {
-      "lastModificationDate": 1694647024547,
-      "contentHash": "67bad9bdbcb85bf34e0b0f31095d3031",
+      "lastModificationDate": 1696888639431,
+      "contentHash": "92f6dd6f52c26f7fc78289d675efab72",
       "sourceName": "test/FoundryExample.t.sol",
       "solcConfig": {
         "settings": {
@@ -1163,7 +1163,7 @@
         "lib/forge-std/src/StdUtils.sol",
         "lib/forge-std/src\\Test.sol",
         "lib/forge-std/src/Vm.sol",
-        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src\\console.sol",
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
         "lib/forge-std/src/safeconsole.sol",

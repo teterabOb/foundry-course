@@ -2,7 +2,7 @@
 pragma solidity 0.8.10;
 
 import "forge-std/Test.sol";
-import { HelperContract } from "../src/HelperContract.sol";
+import {HelperContract} from "../src/HelperContract.sol";
 
 contract ContractBTest is Test, HelperContract {
     uint256 testNumber;
@@ -16,7 +16,7 @@ contract ContractBTest is Test, HelperContract {
     function test_NumberIs42() public {
         assertEq(testAddress, HelperContract.IMPORTANT_ADDRESS);
     }
-    
+
     function testFail_Substract43() public {
         testNumber -= 43;
     }

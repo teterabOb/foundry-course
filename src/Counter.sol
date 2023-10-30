@@ -8,6 +8,7 @@ contract Counter {
         return contador;
     }
 
+    // Nota: si el valor de contador = 0 , la funcion falla
     function incrementa() public {        
         contador += 1;
     }

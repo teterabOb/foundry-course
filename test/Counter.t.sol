@@ -1,22 +1,22 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.10;
 
-import  "forge-std/Test.sol";
+import "forge-std/Test.sol";
 import {HelperContract} from "../src/HelperContract.sol";
 import {Counter} from "../src/Counter.sol";
 
-contract CounterTest is Test, HelperContract { 
+contract CounterTest is Test, HelperContract {
     Counter public counter;
     uint256 testNumber;
     address importantAddress;
 
-    function setUp() public{
+    function setUp() public {
         counter = new Counter();
         testNumber = 42;
         importantAddress = 0xb4c79daB8f259C7Aee6E5b2Aa729821864227e84;
     }
 
-    function test_ImportantAddress() public{
+    function test_ImportantAddress() public {
         assertEq(importantAddress, HelperContract.IMPORTANT_ADDRESS);
     }
 
@@ -24,7 +24,7 @@ contract CounterTest is Test, HelperContract {
         assertEq(testNumber, 42);
     }
 
-    function testIncrementa() public{
+    function testIncrementa() public {
         counter.incrementa();
         console.log("Imprimiendo el siguiente mensaje :", 256);
         assertEq(counter.contador(), 1);
@@ -42,5 +42,4 @@ contract CounterTest is Test, HelperContract {
     function testFail_reduce() public {
         counter.reduce();
     }
-    
 }

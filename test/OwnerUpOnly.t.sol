@@ -2,12 +2,13 @@ pragma solidity 0.8.10;
 
 import "forge-std/Test.sol";
 import {OwnerUpOnly} from "../src/OwnerUpOnly.sol";
+
 error Unauthorized();
 
 contract OwnerUpOnlyTest is Test {
     OwnerUpOnly upOnly;
 
-    function setUp() public{
+    function setUp() public {
         upOnly = new OwnerUpOnly();
     }
 
@@ -21,7 +22,7 @@ contract OwnerUpOnlyTest is Test {
         assertEq(upOnly.count(), 1);
     }
 
-    function testFail_IncrementAsNotOwner() public{
+    function testFail_IncrementAsNotOwner() public {
         vm.prank(address(0));
         upOnly.increment();
     }

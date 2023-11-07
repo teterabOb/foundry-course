@@ -12,10 +12,6 @@ contract OwnerUpOnlyTest is Test {
         upOnly = new OwnerUpOnly();
     }
 
-    function test_Address() public view {
-        console.log("Log something here :", address(msg.sender));
-    }
-
     function test_IncrementAsOwner() public {
         assertEq(upOnly.count(), 0);
         upOnly.increment();
@@ -27,9 +23,8 @@ contract OwnerUpOnlyTest is Test {
         upOnly.increment();
     }
 
-    function test_RevertWhen_CallerIsNotOwner() public {
+    function test_RevertWhen_CallerIsNotOwner() public{
         vm.expectRevert(Unauthorized.selector);
-        console.logBytes4(Unauthorized.selector);
         vm.prank(address(0));
         upOnly.increment();
     }

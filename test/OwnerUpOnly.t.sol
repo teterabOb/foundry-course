@@ -23,7 +23,7 @@ contract OwnerUpOnlyTest is Test {
         upOnly.increment();
     }
 
-    function test_RevertWhen_CallerIsNotOwner() public{
+    function test_RevertWhen_CallerIsNotOwner() public {
         vm.expectRevert(Unauthorized.selector);
         vm.prank(address(0));
         upOnly.increment();

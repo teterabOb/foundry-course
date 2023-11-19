@@ -2,20 +2,20 @@
 
 ## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+**Foundry es un conjunto de herramientas modular, portátil y ultrarrápido para el desarrollo de aplicaciones Ethereum escrito en Rust.**
 
-Foundry consists of:
+Foundry consiste en:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+-   **Forge**: Ethereum testing framework (como Truffle, Hardhat y DappTools).
+-   **Cast**: Navaja suiza para interactuar con EVM smart contracts, enviar transacciones y obtener datos de la cadena..
+-   **Anvil**: node local de Ethereum, similar Ganache, Hardhat Network.
+-   **Chisel**: Rápida, utilitaria y detallado solidity REPL.
 
-## Documentation
+## Documentación
 
 https://book.getfoundry.sh/
 
-## Usage
+## Uso
 
 ### Build
 
@@ -29,18 +29,18 @@ $ forge build
 $ forge test
 ```
 
-Run specific test
+Ejecutar test específico
 
 ```shell
 $ forge test --match-contract ComplicatedContractTest --match-test testDeposit
 ```
-We can run tests in filenames that match a glob pattern with
+Podemos ejecutar pruebas en nombres de archivos que coincidan con un patrón global con
 
 ```shell
 $ forge test --match-path test/ContractB.t.sol
 ```
 
-### Format
+### Formatear
 
 ```shell
 $ forge fmt

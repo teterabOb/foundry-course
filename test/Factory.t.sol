@@ -12,11 +12,13 @@ contract FactoryTest is Test {
     }
 
     function test_Deploy() public {
+        vm.prank(address(0));
         address result = factory.deploy();
         require(result != address(0), "No adddress zero");
     }
 
-    function testFail_Revert() public view {
+    function testFail_Revert() public  {
+        vm.prank(address(0));
         factory.revertFunction();
     }
 }

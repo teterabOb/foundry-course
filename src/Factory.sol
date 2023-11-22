@@ -10,14 +10,14 @@ contract Factory {
 
     event Reverting(string indexed message);
 
-    function deploy() external returns(address){
+    function deploy() external returns (address) {
         HolaMundo newContract = new HolaMundo();
-        holaMundo = newContract;        
+        holaMundo = newContract;
         emit Reverting("Log");
-        return address(newContract);        
+        return address(newContract);
     }
 
-    function revertFunction() pure external {
+    function revertFunction() external pure {
         revert ThrowError();
     }
 }

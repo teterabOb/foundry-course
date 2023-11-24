@@ -11,7 +11,7 @@ contract HolaMundoTest is Test {
         holaMundo = new HolaMundo();
     }
 
-    function testSaludo() public {
+    function testFail_Saludo() public {
         assertEq(holaMundo.saludo(), "Hola Mundo#");
     }
 }

@@ -5,26 +5,27 @@ import {Test} from "forge-std/Test.sol";
 import {Factory} from "../src/Factory.sol";
 
 contract FactoryTest is Test {
-    /* Colores
-    // Verde-Green: Para llamadas que no revierten / For calls that do not revert
-    // Rojo-Red: Para llamadas que revierten / For reverting calls
-    // Azul-Blue: Para llamadas a cheat codes / For calls to cheat codes
-    // Cyan-Cin: Para logs/eventos emitidos / For emitted logs
-    // Amarillo-Yellow: Para despliegue de contratos / For contract deployments
+    /*
+    // verde: para las llamadas que no revierten
+    // rojo: para las llamadas que revierten
+    // azul: para las llamadas a los cheatcodes
+    // cin: para los logs/ eventos emitidos
+    // amarillo: para el despliegue de contratos
     */
+
     Factory public factory;
 
-    function setUp() public {
+    function setUp() public{
         factory = new Factory();
     }
 
-    function test_Deploy() public {
+    function test_Deploy() public{
         vm.prank(address(0));
-        address result = factory.deploy();
-        require(result != address(0), "No adddress zero");
+        string memory result = factory.deploy();
+        assertEq(result, "Contrato desplegado");
     }
 
-    function testFail_Revert() public  {
+    function testFail_Revert() public {
         vm.prank(address(0));
         factory.revertFunction();
     }

@@ -7,14 +7,14 @@ error ThrowError();
 
 contract Factory {
     HolaMundo public holaMundo;
+    
+    event Reverting(address indexed newContract);
 
-    event Reverting(string indexed message);
-
-    function deploy() external returns (address) {
+    function deploy() external returns (string memory) {
         HolaMundo newContract = new HolaMundo();
         holaMundo = newContract;
-        emit Reverting("Log");
-        return address(newContract);
+        emit Reverting(address(holaMundo));
+        return "Contrato desplegado";
     }
 
     function revertFunction() external pure {

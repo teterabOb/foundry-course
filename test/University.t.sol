@@ -8,10 +8,9 @@ contract UniversityTest is Test {
     University public university;
     uint256 private startDate;
 
-    // vm.warp - set block.timestamp
-    // wm.scroll - set block number
-    // skip - increment current times
-    // rewind - decrement current times
+    // vm.warp - establecer block.timestamp    
+    // skip - incrementar el tiempo actual en segundos
+    // rewind - reducir el tiempo actual en segundos
 
     function setUp() public {
         university = new University();
@@ -36,17 +35,16 @@ contract UniversityTest is Test {
 
     function testSkip() public {
         vm.warp(0);
-        assertEq(block.timestamp, 0);     
+        assertEq(block.timestamp, 0);
         skip(3600);
-        assertEq(block.timestamp, 3600);   
+        assertEq(block.timestamp, 3600);
     }
 
     function testRewind() public {
-        // Imprimir por consola el valor inicial del block.timestamp
+        // Imprimir por consola el valor inicial del block.timestamp que es 1
         console.logUint(block.timestamp);
-        uint t = block.timestamp;
+        uint256 t = block.timestamp;
         rewind(1);
-        assertEq(block.timestamp, 0);        
+        assertEq(block.timestamp, 0);
     }
-
 }

@@ -6,10 +6,10 @@ contract University {
     uint256 public endDate = block.timestamp + 2 days;
 
     function enroll() public {
-        require(block.timestamp >= startDate && block.timestamp < endDate, "can't enroll");
+        require(block.timestamp >= startDate && block.timestamp < endDate, "cannot enroll");
     }
 
     function leave() public {
-        require(block.timestamp >= endDate, "can't leave");
+        require(block.timestamp >= endDate, "cannot leave");
     }
 }

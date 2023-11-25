@@ -7,7 +7,7 @@ error ThrowError();
 
 contract Factory {
     HolaMundo public holaMundo;
-    
+
     event Reverting(address indexed newContract);
 
     function deploy() external returns (string memory) {

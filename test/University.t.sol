@@ -11,14 +11,20 @@ contract UniversityTest is Test {
     // vm.warp - establecer block.timestamp    
     // skip - incrementar el tiempo actual en segundos
     // rewind - reducir el tiempo actual en segundos
-
+    
     function setUp() public {
         university = new University();
         startDate = block.timestamp;
     }
 
-    function testEnrollFailBeforStartDate() public {
-        vm.expectRevert("can't enroll");
+    function testEnrollFailBeforeStartDate() public {
+        vm.expectRevert("cannot enroll");
+        university.enroll();
+    }
+
+    function testEnrollFailBeforeEndDate() public {
+        vm.expectRevert("cannot enroll");
+        vm.warp(startDate + 2 days);
         university.enroll();
     }
 
@@ -27,24 +33,25 @@ contract UniversityTest is Test {
         university.enroll();
     }
 
-    function testEnrollFailBeforEndDate() public {
-        vm.expectRevert("can't enroll");
-        vm.warp(startDate + 2 days);
-        university.enroll();
+    function testLeave() public {
+        vm.warp(startDate + 2 days + 1 seconds);
+        university.leave();
     }
 
     function testSkip() public {
+        //console.logUint(block.timestamp);
         vm.warp(0);
         assertEq(block.timestamp, 0);
-        skip(3600);
+        skip(3600); 
         assertEq(block.timestamp, 3600);
     }
 
     function testRewind() public {
-        // Imprimir por consola el valor inicial del block.timestamp que es 1
-        console.logUint(block.timestamp);
         uint256 t = block.timestamp;
         rewind(1);
         assertEq(block.timestamp, 0);
     }
+
+
 }
+

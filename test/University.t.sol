@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.20;
+pragma solidity 0.8.10;
 
 import {Test, console} from "forge-std/Test.sol";
 import {University} from "../src/University.sol";
@@ -47,7 +47,6 @@ contract UniversityTest is Test {
     }
 
     function testRewind() public {
-        uint256 t = block.timestamp;
         rewind(1);
         assertEq(block.timestamp, 0);
     }

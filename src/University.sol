@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.20;
+pragma solidity 0.8.10;
 
 contract University {
     uint256 public startDate = block.timestamp + 1 days;

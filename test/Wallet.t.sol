@@ -5,6 +5,8 @@ import "forge-std/Test.sol";
 import {Wallet} from "../src/Wallet.sol";
 
 contract WalletTest is Test {
+    // deal: setea los fondos de un address
+    // hoax: setea los fondos y el address
     Wallet wallet;
 
     function setUp() public {
@@ -20,15 +22,25 @@ contract WalletTest is Test {
         require(transfered, "Transfer failed");
     }
 
-    function testDepositEther() public {
-        console.logAddress(address(this));
-        console.log(address(this).balance);
+    function testCallerByPrank() public {
+        
+    }
+
+    function testDepositEtherDeal() public {
+
+    }
+
+    function testDepositEther() public {                
         hoax(address(this), 10 ether);
         console.log(address(this).balance);
         address walletAddress = address(wallet);
         console.log(walletAddress.balance);
         payable(walletAddress).transfer(1 ether);
         console.log(walletAddress.balance / 1e18);
+    }
+
+    function testContractBalance() public view {
+        console.log(address(this).balance);
     }
 
     function testDepositEtherToContract() public {

@@ -5,7 +5,7 @@ error Unauthorized();
 contract OwnerUpOnly {
     address public immutable owner;
     uint256 public count;
-    // Nuevo evento
+    // Nuevo evento para startPrank y stopPrank
     event Caller(address indexed sender);
 
     constructor() {
@@ -19,7 +19,7 @@ contract OwnerUpOnly {
         count++;
     }
 
-    // Nueva funcion
+    // Nueva funcion para startPrank y stopPrank
     function incrementNotOwner() external {
         count++;
         emit Caller(msg.sender);

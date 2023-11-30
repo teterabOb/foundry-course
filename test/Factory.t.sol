@@ -15,11 +15,11 @@ contract FactoryTest is Test {
 
     Factory public factory;
 
-    function setUp() public{
+    function setUp() public {
         factory = new Factory();
     }
 
-    function test_Deploy() public{
+    function test_Deploy() public {
         vm.prank(address(0));
         string memory result = factory.deploy();
         assertEq(result, "Contrato desplegado");

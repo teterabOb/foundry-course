@@ -45,17 +45,18 @@ contract WalletTest is Test {
         // Setea el address(1) de manera perpetua
         // Y le transfiere 1 ether
         deal(address(this), 1 ether);
-        console.log(address(this).balance);
+        // console.log(address(this).balance);
         // Llamada a la funcion _send para transferir ETH
-        _send(1 ether);
-        console.log(address(this).balance);
+        _sendLowLevelCall(1 ether);
+        //console.log(address(this).balance);
         // Valida que el balance del address sea igual a 0
         assertEq(address(this).balance, 0);
+        // vm.prank(address(1));
         // Hacemos withdraw de todos los fondos del contrato
         wallet.withdrawAll(1 ether);
         // Validamos que el balance del address(1) sea 0
         // Ya que transfirió todo su balance y el withdraw revirtió
-        console.log(address(this).balance);
+        // console.log(address(this).balance);
         //assertEq(address(this).balance, 1);
     }
 
@@ -91,4 +92,8 @@ contract WalletTest is Test {
         deal(address(1), 10 ether);
     }
     */
+
+   // Debemos agregar esta función para depositar 
+   // para que funcione el withdraw
+   receive() external payable {}
 }

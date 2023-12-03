@@ -13,11 +13,9 @@ contract Wallet {
     receive() external payable {
         emit Deposited(msg.sender);
     }
-
-    //payable(msg.sender).transfer(_amount);
-    function withdrawAll(uint256 _amount) external  {
-        require(address(this).balance > 0, "Not enough eth");
-        payable(owner).transfer(_amount);
+    
+    function withdrawAll() onlyOwner external  {        
+        payable(owner).transfer(address(this).balance);
     }
 
     function getOwner() public view returns(address) {

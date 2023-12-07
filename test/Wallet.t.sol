@@ -20,7 +20,16 @@ contract WalletTest is Test {
         require(transfered, "Transfer failed");
     }
 
-    function testDepositWithdrawDeal() public {
+    function testBalance() public {
+        vm.skip(true);
+        deal(address(1), 1 ether);
+        assertEq(address(1).balance, 1 ether);
+
+        deal(address(1), 10 ether);
+        assertEq(address(1).balance, 10 ether);
+    }
+
+    function testDepositWithdrawDeal() public {     
         vm.skip(true);
         deal(address(this), 1 ether);
         _sendLowLevelCall(1 ether);
@@ -32,9 +41,20 @@ contract WalletTest is Test {
 
     function testDepositWithdrawHoax() public {        
         vm.skip(true);
+        uint256 senderBalance = address(this).balance;
         hoax(address(1), 1 ether);        
         _sendLowLevelCall(1 ether);
         assertEq(address(1).balance, 0);            
+        wallet.withdrawAll();   
+        assertEq(address(1).balance, 0); 
+        assertEq(address(this).balance, senderBalance + 1 ether);
+    }
+
+    function testDepositWithdrawStartHoax() public {                
+        startHoax(address(1), 1 ether);        
+        _sendLowLevelCall(1 ether);
+        assertEq(address(1).balance, 0);   
+        vm.expectRevert();         
         wallet.withdrawAll();   
         assertEq(address(1).balance, 0); 
     }

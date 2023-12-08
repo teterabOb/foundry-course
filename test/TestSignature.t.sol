@@ -24,10 +24,10 @@ contract TestSign is Test {
     }
 
     function testSigneMessageCreateWallet() public {
-        Wallet memory alice = vm.createWallet(uint256(keccak256(bytes("1"))));
+        Wallet memory alice = vm.createWallet("alice");
         bytes32 hash = keccak256("Signed by Alice");
         (uint8 v,bytes32 r,bytes32 s) = vm.sign(alice, hash);
         address signer = ecrecover(hash, v, r, s);
-        assertEq(alice.address, signer);
+        assertEq(alice.addr, signer);
     }
 }

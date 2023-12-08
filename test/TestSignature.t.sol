@@ -4,7 +4,6 @@ pragma solidity 0.8.20;
 import "forge-std/Test.sol";
 
 contract TestSign is Test {
-
     function testSigneMessage() public {
         (address alice, uint256 alicePk) = makeAddrAndKey("alice");
         emit log_address(alice);

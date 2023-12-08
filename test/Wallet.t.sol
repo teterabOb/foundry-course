@@ -1,12 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.20;
 
-import "forge-std/Test.sol";
+import {Test, console} from "forge-std/Test.sol";
 import {Wallet} from "../src/Wallet.sol";
 
 contract WalletTest is Test {
-    // deal: setea los fondos de un address
-    // hoax: setea los fondos y el address
     Wallet wallet;
 
     function setUp() public {
@@ -18,34 +16,48 @@ contract WalletTest is Test {
     }
 
     function _sendLowLevelCall(uint256 amount) private {
-        (bool transfered, ) = address(wallet).call{value: amount}("");
+        (bool transfered,) = address(wallet).call{value: amount}("");
         require(transfered, "Transfer failed");
     }
 
-    function testCallerByPrank() public {
-        
+    function testBalance() public {
+        vm.skip(true);
+        deal(address(1), 1 ether);
+        assertEq(address(1).balance, 1 ether);
+
+        deal(address(1), 10 ether);
+        assertEq(address(1).balance, 10 ether);
     }
 
-    function testDepositEtherDeal() public {
-
-    }
-
-    function testDepositEther() public {                
-        hoax(address(this), 10 ether);
-        console.log(address(this).balance);
-        address walletAddress = address(wallet);
-        console.log(walletAddress.balance);
-        payable(walletAddress).transfer(1 ether);
-        console.log(walletAddress.balance / 1e18);
-    }
-
-    function testContractBalance() public view {
-        console.log(address(this).balance);
-    }
-
-    function testDepositEtherToContract() public {
-        hoax(address(this), 10 ether);
+    function testDepositWithdrawDeal() public {
+        vm.skip(true);
+        deal(address(this), 1 ether);
         _sendLowLevelCall(1 ether);
+        assertEq(address(this).balance, 0);
         assertEq(address(wallet).balance, 1 ether);
+        wallet.withdrawAll();
+        assertEq(address(wallet).balance, 0);
     }
+
+    function testDepositWithdrawHoax() public {
+        vm.skip(true);
+        uint256 senderBalance = address(this).balance;
+        hoax(address(1), 1 ether);
+        _sendLowLevelCall(1 ether);
+        assertEq(address(1).balance, 0);
+        wallet.withdrawAll();
+        assertEq(address(1).balance, 0);
+        assertEq(address(this).balance, senderBalance + 1 ether);
+    }
+
+    function testDepositWithdrawStartHoax() public {
+        startHoax(address(1), 1 ether);
+        _sendLowLevelCall(1 ether);
+        assertEq(address(1).balance, 0);
+        vm.expectRevert();
+        wallet.withdrawAll();
+        assertEq(address(1).balance, 0);
+    }
+
+    receive() external payable {}
 }

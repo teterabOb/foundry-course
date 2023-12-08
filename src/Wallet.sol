@@ -6,7 +6,7 @@ contract Wallet {
 
     address private owner;
 
-    constructor(){
+    constructor() {
         owner = msg.sender;
     }
 
@@ -18,11 +18,11 @@ contract Wallet {
         payable(owner).transfer(address(this).balance);
     }
 
-    function getOwner() public view returns(address) {
+    function getOwner() public view returns (address) {
         return owner;
     }
 
-    function setOwner(address _address) onlyOwner external {
+    function setOwner(address _address) external onlyOwner {
         owner = _address;
     }
 

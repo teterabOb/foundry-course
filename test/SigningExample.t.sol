@@ -31,7 +31,7 @@ contract SigningExampleTest is Test {
         uint256 amount = 2;
         // Numero de serie
         string memory nonce = "ASDF";
-
+        
         vm.startPrank(signer);
         bytes32 digest = keccak256(abi.encodePacked(user, amount, nonce)).toEthSignedMessageHash();
         (uint8 v, bytes32 r, bytes32 s) = vm.sign(signerPrivateKey, digest);
@@ -45,6 +45,4 @@ contract SigningExampleTest is Test {
 
         vm.stopPrank();
     }
-
-
 }

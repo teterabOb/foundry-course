@@ -10,7 +10,7 @@ contract SigningExample is Ownable {
     using MessageHashUtils for bytes32;
 
     constructor() Ownable(msg.sender) {}
-
+    
     address public systemAddress;
 
     function setSystemAddress(address _address) external onlyOwner {
@@ -31,9 +31,11 @@ contract SigningExample is Ownable {
         pure
         returns (bool)
     {
+        // Valida que systemAddress esté asiignada
         require(_systemAddress != address(0), "Missing System Address");
-
+        // Convierte / concatena el hash con el prefijo
         bytes32 signedHash = hash.toEthSignedMessageHash();
+        // Permite recuperar el address que firmó el mensaje
         return signedHash.recover(signature) == _systemAddress;
     }
 }

@@ -22,5 +22,29 @@ contract SigningExampleTest is Test {
         signing.setSystemAddress(signer);
     }
 
+    function testPurchase() public {
+        // Usario que compra
+        address user = vm.addr(userPrivateKey);
+        // Firmante - Cuenta del Sistema
+        address signer = vm.addr(signerPrivateKey);
+        // Monto a pagar / comprar
+        uint256 amount = 2;
+        // Numero de serie
+        string memory nonce = "ASDF";
+
+        vm.startPrank(signer);
+        bytes32 digest = keccak256(abi.encodePacked(user, amount, nonce)).toEthSignedMessageHash();
+        (uint8 v, bytes32 r, bytes32 s) = vm.sign(signerPrivateKey, digest);
+        bytes memory signature = abi.encodePacked(r, s, v);
+        vm.stopPrank();
+
+        vm.startPrank(user);
+        vm.deal(user, 1 ether);
+
+        signing.purchase(amount, nonce, signature);
+
+        vm.stopPrank();
+    }
+
 
 }

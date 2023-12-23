@@ -46,7 +46,7 @@ contract ForkTest is Test {
     function testCanSetForkBlockNumber() public {
         vm.selectFork(mainnetFork);
         vm.rollFork(1_337_000);
-
+        emit log_uint(block.number);
         assertEq(block.number, 1_337_000);
     }
 

@@ -24,8 +24,10 @@ contract SafeTest is Test {
         uint256 postBalance = address(this).balance;
         assertEq(prebalance + 1 ether, postBalance);
     }
-    // uint96
-    // forge-config: default.fuzz.runs = 300
+    
+    // uint96 Correcto
+    // uint256 Error
+    /// forge-config: default.fuzz.runs = 300
     function test_Withdraw_Fuzzy(uint96 amount) public {        
         payable(address(safe)).transfer(amount);
         uint256 prebalance = address(this).balance;

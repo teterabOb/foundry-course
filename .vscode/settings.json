@@ -1,3 +1,6 @@
 {
-    "solidity.compileUsingRemoteVersion": "v0.8.20+commit.a1b79de6"
+    "solidity.compileUsingRemoteVersion": "v0.8.20+commit.a1b79de6",
+    "solidity.remappings": [
+        "forge-std/=lib/forge-std/src/",
+    ]
 }

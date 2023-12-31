@@ -37,5 +37,5 @@ contract SafeTest is Test {
 
 // [PASS] test_Withdraw_Fuzzy(uint96) (runs: 256, μ: 18850, ~: 19636) 
 // runs: 256 -> se refiera a la cantidad de escenarios que el fuzzer testeó, por defecto 256
-// μ: 18850 -> significa el gas utilizado através de todos los fuzz ejecutados
-// ~: 19636 -> es la media de gas utilizada
+// μ: 18850 -> significa la media/promedio utilizado através de todos los fuzz ejecutados
+// ~: 19636 -> es la mediana de gas utilizada

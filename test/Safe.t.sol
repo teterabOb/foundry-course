@@ -17,15 +17,16 @@ contract SafeTest is Test {
         emit log_uint(address(this).balance);
         // Esto es lo maximo que tiene por defecto
         // 79228162514264337593543950335
-        payable(address(safe)).transfer(1 ether);
-        //payable(address(safe)).transfer(1 ether);
+        payable(address(safe)).transfer(1 ether);        
         uint256 prebalance = address(this).balance;
         safe.withdraw();
         uint256 postBalance = address(this).balance;
         assertEq(prebalance + 1 ether, postBalance);
     }
-    // uint96
-    // forge-config: default.fuzz.runs = 300
+    
+    // uint96 Correcto
+    // uint256 Error
+    /// forge-config: default.fuzz.runs = 300
     function test_Withdraw_Fuzzy(uint96 amount) public {        
         payable(address(safe)).transfer(amount);
         uint256 prebalance = address(this).balance;
@@ -37,5 +38,5 @@ contract SafeTest is Test {
 
 // [PASS] test_Withdraw_Fuzzy(uint96) (runs: 256, μ: 18850, ~: 19636) 
 // runs: 256 -> se refiera a la cantidad de escenarios que el fuzzer testeó, por defecto 256
-// μ: 18850 -> significa el gas utilizado através de todos los fuzz ejecutados
-// ~: 19636 -> es la media de gas utilizada
+// μ: 18850 -> significa la media/promedio utilizado através de todos los fuzz ejecutados
+// ~: 19636 -> es la mediana de gas utilizada

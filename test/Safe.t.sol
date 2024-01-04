@@ -17,8 +17,7 @@ contract SafeTest is Test {
         emit log_uint(address(this).balance);
         // Esto es lo maximo que tiene por defecto
         // 79228162514264337593543950335
-        payable(address(safe)).transfer(1 ether);
-        //payable(address(safe)).transfer(1 ether);
+        payable(address(safe)).transfer(1 ether);        
         uint256 prebalance = address(this).balance;
         safe.withdraw();
         uint256 postBalance = address(this).balance;

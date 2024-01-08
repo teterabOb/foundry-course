@@ -64,10 +64,22 @@ $ anvil
 $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
 ```
 
+```shell
+$ forge create Contract --private-key PRIVATE_KEY
+```
+
+```shell
+$ forge create Contract --interactive
+```
+
 ### Cast
 
 ```shell
 $ cast <subcommand>
+```
+
+```shell
+$ cast call CONTRACT_ADDRESS "functionName()"
 ```
 
 ### Help

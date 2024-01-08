@@ -8,6 +8,10 @@ auto_detect_solc = true
 [rpc_endpoints]
 ethereum_mainnet = "${ETHEREUM_MAINNET_RPC}"
 optimism_mainnet = "${OPTIMISM_MAINNET_RPC}"
+sepolia = "${SEPOLIA_RPC_URL}"
+
+[etherscan]
+sepolia = { key = "{$ETHERSCAN_API_KEY}"}
 
 
 

@@ -5,6 +5,9 @@ libs = ["lib"]
 #solc_version = "0.8.20"
 auto_detect_solc = true
 
+[invariant]
+#fail_on_revert = true
+
 [rpc_endpoints]
 ethereum_mainnet = "${ETHEREUM_MAINNET_RPC}"
 optimism_mainnet = "${OPTIMISM_MAINNET_RPC}"

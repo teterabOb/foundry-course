@@ -11,7 +11,7 @@ optimism_mainnet = "${OPTIMISM_MAINNET_RPC}"
 sepolia = "${SEPOLIA_RPC_URL}"
 
 [etherscan]
-sepolia = { key = "{$ETHERSCAN_API_KEY}"}
+sepolia = { key = "${ETHERSCAN_API_KEY}" }
 
 
 

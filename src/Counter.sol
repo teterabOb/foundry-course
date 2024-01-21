@@ -9,7 +9,6 @@ contract Counter {
         number = newNumber;
         total += newNumber;
     }
-
     
     function increment() public {
         number++;

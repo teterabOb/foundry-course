@@ -12,10 +12,10 @@ contract InvariantExample1 is Test {
     }
 
     function invariant_A() external {
-        assertEq(foo.val1() + foo.val2(), foo.val3());
+        assertEq(foo.value1() + foo.value2(), foo.value3());
     }
 
     function invariant_B() external {
-        assertGe(foo.val1() + foo.val2(), foo.val1());
+        assertGe(foo.value1() + foo.value2(), foo.value1());
     }
 }

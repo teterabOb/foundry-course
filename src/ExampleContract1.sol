@@ -3,17 +3,17 @@
 pragma solidity 0.8.20;
 
 contract ExampleContract1 {
-    uint256 public val1;
-    uint256 public val2;
-    uint256 public val3;
+    uint256 public value1;
+    uint256 public value2;
+    uint256 public value3;
 
-    function addToA(uint256 amount) external {
-        val1 += amount;
-        val3 += amount;
+    function addToA(uint256 _value) public {
+        value1 += _value;
+        value3 += _value;
     }
 
-    function addToB(uint256 amount) external {
-        val2 += amount;
-        val3 += amount;
-    }    
+    function addToB(uint256 _value) public {
+        value2 += _value;
+        value3 += _value;
+    }
 }

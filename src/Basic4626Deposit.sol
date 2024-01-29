@@ -1,7 +1,7 @@
 //SPDX-license-Identifier: UNLICENSED
 pragma solidity 0.8.20;
 
-interface IERC20Like {
+interface IERC20 {
     function balanceOf(address) external view returns (uint);
 
     function transferFrom(address, address, uint) external returns (bool);
@@ -46,7 +46,7 @@ contract Basic4626Deposit {
         }
 
         require(
-            IERC20Like(asset).transferFrom(msg.sender, address(this), assets_),
+            IERC20(asset).transferFrom(msg.sender, address(this), assets_),
             "Basic4626Deposit: transferFrom failed"
         );                        
     }
@@ -68,7 +68,7 @@ contract Basic4626Deposit {
     }
 
     function totalAssets() public view returns (uint256 assets_) {
-        assets_ = IERC20Like(asset).balanceOf(address(this));
+        assets_ = IERC20(asset).balanceOf(address(this));
     }
 
 }

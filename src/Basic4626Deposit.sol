@@ -1,11 +1,7 @@
 //SPDX-license-Identifier: UNLICENSED
 pragma solidity 0.8.20;
 
-interface IERC20 {
-    function balanceOf(address) external view returns (uint);
-
-    function transferFrom(address, address, uint) external returns (bool);
-}
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract Basic4626Deposit {
     address public immutable asset;

@@ -15,12 +15,7 @@ contract Basic4626Deposit {
 
     mapping(address => uint256) public balanceOf;
 
-    constructor(
-        address asset_,
-        string memory name_,
-        string memory symbol_,
-        uint8 decimals_
-    ) {
+    constructor(address asset_, string memory name_, string memory symbol_, uint8 decimals_) {
         asset = asset_;
         name = name_;
         symbol = symbol_;
@@ -35,21 +30,16 @@ contract Basic4626Deposit {
         require(assets_ > 0, "Basic4626Deposit: assets is zero");
 
         totalSupply += shares_;
-
-        // No puede ocurrir el overflow porque totalSupply hubiera sido mayor a 2^256 en la linea anterior
+        
         unchecked {
             balanceOf[receiver_] += shares_;
         }
 
-        require(
-            IERC20(asset).transferFrom(msg.sender, address(this), assets_),
-            "Basic4626Deposit: transferFrom failed"
-        );                        
+        require(IERC20(asset).transferFrom(msg.sender, address(this), assets_), "Basic4626Deposit: transferFrom failed");
     }
 
-    function transfer(address recipient_, uint256 amount_) external returns (bool) {
+    function transfer(address recipient_, uint256 amount_) external returns(bool){
         balanceOf[msg.sender] -= amount_;
-
         unchecked {
             balanceOf[recipient_] += amount_;
         }
@@ -57,13 +47,13 @@ contract Basic4626Deposit {
         return true;
     }
 
-    function convertToShares(uint256 assets_) public view returns (uint256 shares_) {
+    function convertToShares(uint256 assets_) public view returns(uint256 shares_){
         uint256 supply_ = totalSupply;
 
-        shares_ = supply_ == 0 ? assets_ : (assets_ * supply_) / totalAssets();
+        shares = supply_ == 0 ? assets_ : assets_ * supply_ / IERC20(asset).balanceOf(address(this));
     }
 
-    function totalAssets() public view returns (uint256 assets_) {
+    function totalAssets() public view returns(uint256 assets_){
         assets_ = IERC20(asset).balanceOf(address(this));
     }
 

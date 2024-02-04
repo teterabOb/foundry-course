@@ -49,7 +49,7 @@ contract Basic4626DepositTest is Test {
 
     function setUp() public {
         observdevToken = new ObservdevToken();
-        basicDeposit = new Basic4626Deposit(address(observdevToken), observdevToken.name(), observdevToken.symbol(), observdevToken.decimals());
+        basicDeposit = new Basic4626Deposit(observdevToken.name(), observdevToken.symbol(), observdevToken.decimals(), address(observdevToken));
         asset = IERC20(address(observdevToken));
         handler = new Handler(address(observdevToken), address(basicDeposit));
         // Debemos setear el target contract para que ejecute

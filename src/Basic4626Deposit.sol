@@ -50,7 +50,7 @@ contract Basic4626Deposit {
     function convertToShares(uint256 assets_) public view returns(uint256 shares_){
         uint256 supply_ = totalSupply;
 
-        shares = supply_ == 0 ? assets_ : assets_ * supply_ / IERC20(asset).balanceOf(address(this));
+        shares_ = supply_ == 0 ? assets_ : assets_ * supply_ / IERC20(asset).balanceOf(address(this));
     }
 
     function totalAssets() public view returns(uint256 assets_){

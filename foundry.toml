@@ -6,7 +6,7 @@ libs = ["lib"]
 auto_detect_solc = true
 
 [invariant]
-fail_on_revert = false
+fail_on_revert = true
 
 [rpc_endpoints]
 ethereum_mainnet = "${ETHEREUM_MAINNET_RPC}"

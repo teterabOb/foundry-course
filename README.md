@@ -1,19 +1,21 @@
+![My Image](img/foundry-banner.png)
+
 ## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+**Foundry es un conjunto de herramientas modular, portátil y ultrarrápido para el desarrollo de aplicaciones Ethereum escrito en Rust.**
 
-Foundry consists of:
+Foundry consiste en:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+-   **Forge**: Ethereum testing framework (como Truffle, Hardhat y DappTools).
+-   **Cast**: Navaja suiza para interactuar con EVM smart contracts, enviar transacciones y obtener datos de la cadena..
+-   **Anvil**: node local de Ethereum, similar Ganache, Hardhat Network.
+-   **Chisel**: Rápida, utilitaria y detallado solidity REPL.
 
-## Documentation
+## Documentación
 
 https://book.getfoundry.sh/
 
-## Usage
+## Uso
 
 ### Build
 
@@ -27,7 +29,18 @@ $ forge build
 $ forge test
 ```
 
-### Format
+Ejecutar test específico
+
+```shell
+$ forge test --match-contract ComplicatedContractTest --match-test testDeposit
+```
+Podemos ejecutar pruebas en nombres de archivos que coincidan con un patrón global con
+
+```shell
+$ forge test --match-path test/ContractB.t.sol
+```
+
+### Formatear
 
 ```shell
 $ forge fmt
@@ -51,10 +64,22 @@ $ anvil
 $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
 ```
 
+```shell
+$ forge create Contract --private-key PRIVATE_KEY
+```
+
+```shell
+$ forge create Contract --interactive
+```
+
 ### Cast
 
 ```shell
 $ cast <subcommand>
+```
+
+```shell
+$ cast call CONTRACT_ADDRESS "functionName()"
 ```
 
 ### Help
@@ -63,10 +88,4 @@ $ cast <subcommand>
 $ forge --help
 $ anvil --help
 $ cast --help
-```
-
-### Forking
-
-```shell
-$ forge test --match-path test/TU_ARCHIVO.t.sol --fork-url <TU_RPC_URL>
 ```
